@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>KUS · 专业车灯目录</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <div id="app">
+        <div class="container">
+            <!-- 顶部导航 -->
+            <div class="top-bar">
+                <div class="logo">
+                    <h1>KUS</h1>
+                    <span id="logoSubtitle">专业汽车照明目录</span>
+                </div>
+                <div class="controls">
+                    <div class="search-box">
+                        <input type="text" id="searchInput" placeholder="SKU / 描述">
+                    </div>
+                    <button class="btn" id="langBtn">English</button>
+                    <button class="btn cart-btn" id="openCartBtn">🛒 购物车 <span id="cartCount">0</span></button>
+                </div>
+            </div>
+
+            <!-- 分类导航 -->
+            <div class="category-nav">
+                <div id="categoryContainer"></div>
+            </div>
+
+            <!-- 产品列表 -->
+            <div class="table-wrapper">
+                <table class="product-table">
+                    <thead>
+                        <tr>
+                            <th id="thImage">图片</th>
+                            <th id="thImage1">图片1</th>
+                            <th id="thSku">SKU</th>
+                            <th id="thCategory">分类</th>
+                            <th id="thDesc">描述</th>
+                            <th id="thUnit">单位</th>
+                            <th id="thPrice">价格</th>
+                            <th id="thAction">操作</th>
+                        </tr>
+                    </thead>
+                    <tbody id="productListBody"></tbody>
+                </table>
+                <div id="loadingSentinel" class="loading-sentinel">加载更多...</div>
+            </div>
+        </div>
+
+        <!-- 浮动购物车（PC端使用） -->
+        <div class="float-cart" id="floatCartBtn">
+            <i>🛒</i>
+            <span id="floatCartCount">0</span>
+        </div>
+
+        <!-- 购物车侧边栏 -->
+        <div class="cart-sidebar" id="cartSidebar">
+            <div class="cart-header">
+                <h3 id="cartTitle">购物车</h3>
+                <button id="closeCartBtn" class="btn" style="background:transparent;">✖</button>
+            </div>
+            <div class="cart-items" id="cartItemsList"></div>
+            <div class="cart-footer">
+                <div class="cart-shipping">
+                    <label id="shippingLabel">运费</label>
+                    <div class="cart-shipping-input">
+                        <div class="shipping-usd">
+                            <input type="number" id="shippingUSD" placeholder="0.00" step="0.01" value="0">
+                        </div>
+                        <span>≈</span>
+                        <div class="shipping-cny">
+                            <input type="number" id="shippingCNY" placeholder="0.00" step="0.01" value="0">
+                        </div>
+                    </div>
+                </div>
+                <div class="cart-summary" id="cartSummary">
+                    <div><span id="summaryPrefix">清单</span>（<span id="cartTotalQty">0</span><span id="unitPieces">件</span>/<span id="cartTotalTypes">0</span><span id="unitVarieties">款</span>）</div>
+                    <div><span id="totalAmountPrefix">总金额</span>：<span id="cartTotalCNY" class="total-amount">¥0.00</span> ~ <span id="cartTotalUSD" class="total-amount">$0.00</span></div>
+                </div>
+                <div class="cart-actions">
+                    <button id="viewDetailBtn" class="btn" style="background:#1e466e; color:white;"><span id="viewDetailText">查看详细清单</span></button>
+                    <button id="clearCartBtn" class="btn"><span id="clearCartText">清空清单</span></button>
+                </div>
+            </div>
+        </div>
+        <div class="overlay" id="overlay"></div>
+
+        <!-- ===== 手机端底部导航栏（只保留购物车按钮） ===== -->
+        <div class="mobile-bottom-nav" id="mobileBottomNav">
+            <button class="bottom-nav-btn active" id="mobileCartBtn">
+                <span class="nav-icon">🛒</span>
+                <span class="nav-label">购物车</span>
+                <span class="nav-badge hidden" id="mobileCartBadge">0</span>
+            </button>
+        </div>
+    </div>
+
+    <script src="/js/main.js"></script>
+</body>
+</html>

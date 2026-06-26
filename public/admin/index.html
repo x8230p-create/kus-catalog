@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>KUS 管理控制台</title>
+    <link rel="stylesheet" href="/admin/css/admin.css">
+</head>
+<body>
+    <!-- 登录面板 -->
+    <div id="loginPanel" class="login-container">
+        <div class="login-box">
+            <h2>✦ KUS 控制台</h2>
+            <form id="loginForm">
+                <input type="text" id="username" placeholder="用户名" autocomplete="username">
+                <input type="password" id="password" placeholder="密码" autocomplete="current-password">
+                <button type="submit">🔓 登录系统</button>
+            </form>
+            <div id="loginError" class="error"></div>
+        </div>
+    </div>
+
+    <!-- 管理面板 -->
+    <div id="adminPanel" style="display:none;">
+        <div class="admin-nav">
+            <h2>✦ KUS 管理控制台</h2>
+            <button id="logoutBtn">🚪 退出</button>
+        </div>
+        <div class="admin-body">
+            <div class="admin-sidebar" id="sidebarContainer"></div>
+            <div class="admin-content" id="contentContainer"></div>
+        </div>
+    </div>
+
+    <!-- 引入后台脚本 -->
+    <script src="/admin/js/admin.js"></script>
+</body>
+</html>

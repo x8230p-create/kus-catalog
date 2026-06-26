@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=1.0, user-scalable=no">
+    <title>KUS · 订单详情</title>
+    <link rel="stylesheet" href="/css/cart-detail.css">
+</head>
+<body>
+<div class="order-container">
+    <div class="order-header">
+        <h2 id="pageTitle">📄 订单详情</h2>
+        <button id="langSwitch" class="lang-switch">English</button>
+    </div>
+    <div class="order-meta">
+        <div class="meta-item"><span id="contractLabel">合同编号：</span><span id="contractId">KUS-000000</span></div>
+        <div class="meta-item"><span id="authCodeLabel">授权码：</span><span id="authCodeDisplay">未授权</span></div>
+        <div class="meta-item"><span id="customerLabel">客户代码：</span><span id="customerCode">未登录</span></div>
+        <div class="meta-item"><span id="dateLabel">订单日期：</span><span id="orderDate"></span></div>
+        <div class="meta-item"><span id="statusLabel">订单状态：</span><span id="orderStatus">待确认</span></div>
+    </div>
+
+    <!-- PC端表格 -->
+    <div class="table-wrapper" id="tableWrapper">
+        <table class="order-table" id="orderTable">
+            <thead id="tableHead">
+                <tr>
+                    <th id="thSerial">序号</th>
+                    <th id="thImage">图片</th>
+                    <th id="thSku">SKU</th>
+                    <th id="thDesc">描述</th>
+                    <th id="thOption">选型</th>
+                    <th id="thUnit">单位</th>
+                    <th id="thQuantity">数量</th>
+                    <th id="thUnitPrice">单价 (USD)</th>
+                    <th id="thSubtotal">小计 (USD)</th>
+                    <th id="thTotalCNY">人民币 (CNY)</th>
+                    <th id="thAction">操作</th>
+                </tr>
+            </thead>
+            <tbody id="orderTableBody">
+                <tr><td colspan="11" style="text-align:center;padding:40px;">加载中...</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- 手机端卡片容器 -->
+    <div id="mobileCardContainer" style="display:none;"></div>
+
+    <div class="order-summary" id="orderSummary"></div>
+
+    <div class="notice" id="noticeText">
+        ⚠️ 注意：我们网站的所有产品单价计算基础是人民币，如美元兑人民币汇率波动，美元单价会自动调整（非涨价）。您可选择支付人民币，感谢支持。
+    </div>
+
+    <div class="order-actions">
+        <button id="backToCartBtn" class="btn">← 返回购物车</button>
+        <button id="clearCartBtn" class="btn">清空清单</button>
+        <button id="printBtn" class="btn btn-primary">🖨️ 打印 / 生成合同</button>
+    </div>
+</div>
+
+<script src="/js/cart-detail.js"></script>
+</body>
+</html>
