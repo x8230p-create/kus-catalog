@@ -10,7 +10,7 @@ const { openDb } = require('./db/database');
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-// 中间件
+// 中间件（无 trust proxy）
 app.use(helmet({ contentSecurityPolicy: false }));
 app.use(cors());
 app.use(express.json());
@@ -23,7 +23,7 @@ const dbDir = path.join(__dirname, 'db');
 if (!fs.existsSync(uploadDir)) fs.mkdirSync(uploadDir, { recursive: true });
 if (!fs.existsSync(dbDir)) fs.mkdirSync(dbDir, { recursive: true });
 
-// 速率限制器（简化）
+// 速率限制器（无 validate）
 const limiter = rateLimit({
     windowMs: 60 * 1000,
     max: 300
